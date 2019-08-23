@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="mcbs">
+    <title>Sentitour</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency.css" rel="stylesheet">
+    <link href="css/signup.css" rel="stylesheet">
+    <link href="css/password_reset.css" rel="stylesheet">
+</head>
+
+<body id="page-top"  onload="changeDescriptionImages()" onresize="changeDescriptionImages()">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+       
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <img id="sentitour_logo" src="img/logos/sentitour_logo.png" alt="" onclick="showHomePage()">
+            </a>
+
+            <a id="menu_button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">Menu</a>
+            
+            <div id="menu_button_inner_div" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item" > <a class="nav-link js-scroll-trigger pointer" onclick="showAndJumpToSection('#description_section')">Description</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger pointer" onclick="showAndJumpToSection('#news_section')">News</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger pointer" onclick="showAndJumpToSection('#partners_section')">Partners</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger pointer" onclick="showAndJumpToSection('#contact_section')">Contact</a>
+                    </li>
+                    <li class="nav-item" id="login">
+                        <div id="login_modal_state1" class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="" id="login_modal" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Log In</a>                      
+                            <div id="login_modal_state2" class="dropdown-menu px-3">
+                                <form class="form-horizontal" method="post" accept-charset="UTF-8">
+                                    <input id="username_login" class="login" type="text" pattern="^(?=.{6,12})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$" title="6-12 χαρακτήρες, απαραίτητα 1 κεφαλαίος, 1 μικρός χαρακτήρας και 1 αριθμός." name="username_login" placeholder="Username" required>
+                                    <input id="password_login" class="login" type="password" pattern="^(?=.*\d+)(?=.*[a-zA-Z])[0-9a-zA-Z!@#$%].{8,10}$" title="8-10 χαρακτήρες, τουλάχιστον ένας λατινικός χαρακτήρας, 1 αριθμός και 1 σύμβολο." name="password_login" placeholder="Password" required>
+                                    <div align="center" style="margin-top:2%;" class="form-check">
+                                        <input style="margin-top:3%;" type="checkbox" class="form-check-input" id="remember_login" checked>
+                                        <label style="font-size:75%;" class="form-check-label" for="remember_login">Remember me</label>
+                                    </div>
+                                    <button style="margin-top:4%;  margin-left: 13%; width:75%; padding:2%;" class="btn btn-primary" type="submit" name="submit" onClick="LogIn()">Log In</button>
+                                    <div class="pointer" align="center" style="margin-top:5%; font-size:75%;" onclick="injectPasswordReset()"><i class="fa fa-key" aria-hidden="true"></i> Password Reset
+                                        <a></a>
+                                    </div>
+                                    <div class="pointer" align="center" style="margin-top:5%; font-size:75%;" onclick="injectCreateUser()">Create Account
+                                        <a href="#"></a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item" id="search_flags" style="display:inline-block;">
+                        <a align="right" class="pointer" onclick="changeLanguage('gr')">
+                            <img class="lang_icons" src="img\flags\greece-flag-icon.png">
+                        </a>
+                        <a align="right" class="pointer" onclick="changeLanguage('en')">
+                            <img class="lang_icons" id="en_flag" src="img\flags\united-kingdom-flag-icon.png">
+                        </a>
+                        <input  class="placeholder" id="searchbar" type="text" placeholder="Search" aria-label="Search">
+                        <button style="background: transparent; border-color: transparent;" class="btn btn-outline-secondary" type="button"> <i id="search_icon" class="fa fa-search"></i>
+                        </button>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in"><bold>- An Insight into Visitors' Online Opinion Data</bold></div>
+                <div style="font-size: 110%;"> A big data service prototype for tourism professionals, destination managers and...visitors</div><br><br><br><br>
+                 <div style="font-size: 60%;"> The project with code xxxxxx was financed by ESPA</div><img  id="espa_img" src="img\logos\espa.jpg" alt="">
+            </div>
+        </div>
+    </header>
+    <div id="mainBody">
+
+        <!-- Description -->
+        <section class="page-section" id="description_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading" id="description_heading">Description</h2>
+                        <div class="column" id="idea" align="left">
+                            <img id="idea_img" src="img/description/idea.png">
+                            <p class="section-subheading text-muted">
+                               <p class="section-subheading body_text"> <i class="description_subheading">Idea</i> &nbspThe views on the internet and on social networks with tourist experiences vary in form, expressivity, emotion. Social Media, Traveler reviews, travel bloggers and journalists in many different languages ​​record bad or good travel experiences with views on business and destinations.</p>
+                                <ul style="list-style-type:none;">
+                                    <li>
+                                        <p class="idea_li" ><i class="fa fa-arrow-right" style="color:black; margin-right: 1%;"></i>How directly and easily does the tourist practitioner identify the point of view?</p>
+                                    </li>
+                                    <li>
+                                        <p class="idea_li" ><i class="fa fa-arrow-right" style="color:black; margin-right: 1%;"></i>Are destination management organizations systematically aware and aware of the image created from a viewpoint in an online forum in a foreign market?</p>
+                                    </li>
+                                    <li>
+                                       <p class="idea_li" ><i class="fa fa-arrow-right" style="color:black; margin-right: 1%;"></i>Are destination management organizations systematically aware and aware of the image created from a viewpoint in an online forum in a foreign market?</p>
+                                    </li>
+                                    <li>
+                                        <p class="idea_li" ><i class="fa fa-arrow-right" style="color:black; margin-right: 1%;"></i>How can automated content tracking and analysis mechanisms extract knowledge from countless texts, while maintaining reliability in terms of accuracy of results and performance in large data sizes?</p>
+                                    </li>
+                                </ul>
+                                <p class="section-subheading text-muted">Sentitour attempts to provide answers and test solutions for the benefit of tourism professionals and operators who manage tourist resources.             By combining the adaptation of modern Natural Language Processing technologies, neural networks with linguistic analysis thematically adapted to tourism, Neurolingo and the Research Technology Foundation develop, test and evaluate tourism analysis applications.</p>
+                                <img id="idea_img_bot" src="img/description/idea.png" hidden>
+                        </div>
+                        <div class="column" id="kinitra" align="left">
+                            <p class="section-subheading body_text"> <i class="description_subheading">Motivation & Needs</i> &nbspVisitors to a tourist destination very often record their opinions and experiences in online / social media. Other times, users of these media express the intention or desire to visit a place for recreation. They can reasonably suggest a destination or tourist activity. Sometimes they are negative and dissuasive.Identifying and analyzing these views provides valuable insight into a management and promoter of a tourist destination. Existing emotional analysis mechanisms in unstructured data collections do not export accurate knowledge. They use a statistical approach. They do not evolve and do not easily adapt to the thematic requirements, concepts, languages, and geographic data. They do not incorporate linguistic analysis capabilities that are specialized in tourism, but can not scalability over the vast amounts of data coming from the internet. </p>
+                            <img id="kinitra_img_bot" src="img/description/ergo_en.png" hidden>                            
+                        </div>
+                    </div>
+                    <div class="column" id="ergo">
+                        <img id="ergo_img" src="img/description/ergo_en.png">
+                        <p class="section-subheading body_text"> <i class="description_subheading">The project</i> &nbspThe Sentitour develops and adapts the natural language analysis and processing algorithms to meet the needs of tourism to analyze and justify views. Targeted linguistic analysis of texts and views will ensure the desired response to these needs. It incorporates modern methods of deep learning into a word and term detection platform, for their application to the recognition of concepts in order to more accurately analyze views and causes. It seeks to process a large volume of such data. The algorithms will be executed in advanced scaling mechanisms for all phases of the processing: data transformation, training and use of the computational model. The architecture will use the distributed memory to load the data and implement a variety of operators to extract the necessary attributes that the computational model uses. It delivers reports and notifications applications that will visualize the results of analyzes to show their usefulness in scenarios for the use of tourism professionals.</p>
+                        <img id="ergo_img_bot" src="img/description/ergo_en.png" hidden>
+                    </div>
+                    <div class="column" id="pilotiki" align="right">
+                        <img id="pilotiki_img" src="img/description/pilotiki_en.png" >
+                        <p class="section-subheading body_text"> <i class="description_subheading">Pilot Application</i> &nbspApplying and evaluating Sentitour to selected destinations will allow the evaluation of the platform in real-world data and conditions, as well as technological performance criteria and user and operational usability and accuracy criteria.
+                        </p>
+                        <img id="pilotiki_img_bot" src="img/description/pilotiki_en.png" hidden>
+                    </div>
+                    <div class="column" id="goal">
+                        <img id="goal_img" src="img/description/goal.png">
+                        <h4 style="text-align: center;">Goals</h4>
+                        <ul class="section-subheading text-muted">
+                            <li>
+                                <p><font color="black" style="font-weight: bold;">PUNCTUALITY</font>
+                                    <br>Systematic analysis of views recorded in digital media about destinations and tourist services</p>
+                            </li>
+                            <li>
+                                <p><font color="black" style="font-weight: bold;">SPECIALIZATION</font>
+                                    <br>Adaptation of automated text comprehension mechanisms with engineering-focused learning techniques focused on tourism</p>
+                            </li>
+                            <li>
+                                <p><font color="black" style="font-weight: bold;">HIGH PERFORMANCE</font>
+                                    <br>Ensuring scalability in large volumes of data</p>
+                            </li>
+                            <li>
+                                <p><font color="black" style="font-weight: bold;">EFFECTIVENESS</font>
+                                    <br>Supporting business processes marketing and managing tourism resources for the needs of professionals and management bodies</p>
+                            </li>
+                        </ul>
+                        <img id="goal_img_bot" src="img/description/goal.png" hidden>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News -->
+        <section class="page-section" id="news_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading" style="padding-bottom: 5%">News</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="timeline">
+                            <li>
+                                <div class="timeline-image">
+                                    <img class="rounded-circle img-fluid" src="img/news/analysis.png" alt="">
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4>October 2018</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p class="text-muted">Data sources analysis</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-image">
+                                    <img class="rounded-circle img-fluid" src="img/news/starting.png" alt="">
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4>September 2018</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p class="text-muted">Starting project</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners -->
+        <section class="bg-light page-section" id="partners_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Partners</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="team-member">
+                            <a href="http://www.neurolingo.gr/en">
+                                <img id="neurolingopic"class="mx-auto rounded-circle" border="0" src="img\logos\neurolingo.png">
+                            </a>
+                            <h4>Neurolingo</h4>
+                            <p class="text-muted">A lexicographic analysis company in Greece</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="team-member">
+                            <a href="https://www.ics.forth.gr/index.html">
+                                <img class="mx-auto rounded-circle" border="0" src="img\logos\forth_logo_en.png">
+                            </a>
+                            <h4>Foundation for Research and Technology - Hellas (FORTH)</h4>
+                            <p class="text-muted">The country's leading Research Foundation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form-->
+        <section class="page-section mb-4" id="contact_section">
+            <div class="container">
+
+            <div class="col-lg-6 text-center">
+                <h2 class="section-heading" id="contact_title">Contact</h2><br>
+            </div>
+
+            <div class="row">
+
+                <div id="contactForm" class="col-md-9 mb-md-0 mb-5">
+                    <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-md-8">
+                                    <div class="md-form mb-0">
+                                        <input type="text" id="name_cform" name="name" class="form-control" placeholder="Name *">
+                                        <label for="name" class=""></label>
+                                    </div>
+
+                                    <div class="md-form mb-0">
+                                        <input type="email" id="email_cform" name="email" class="form-control" placeholder="Email *" oninvalid="setCustomValidity('Must be 4 Characters')">
+                                        <label for="email" class=""></label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" id="subject_cform" name="subject" class="form-control" placeholder="Subject *">
+                                        <label for="subject" class=""></label>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-8">
+                                    <div class="md-form">
+                                        <textarea type="text" id="message_cform" name="message" rows="2" class="form-control md-textarea" placeholder="Message *"></textarea>
+                                        <label for="message"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 text-center ">
+                            <button id="sendMessageButton" class="btn btn-primary btn-md" onclick="sendMessage()" type="submit">Send Message</button>
+                        </div>
+                        <div class="status"></div>
+                </div>
+                    </form>
+
+                <div class="col-md-3 text-center">
+                    <ul class="list-unstyled mb-0">
+                        <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                            <p>PLACE
+                            </p>
+                        </li>
+
+                        <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                            <p>PHONE</p>
+                        </li>
+
+                        <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                            <p>EMAIL</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4"> <span class="copyright" id="copyright_sentitour">
+          Copyright&copy;Neurolingo 2019
+        </span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"></li>
+                        <li class="list-inline-item"></li>
+                        <li class="list-inline-item"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/agency.js"></script>
+    <script src="js/page_manager.js"></script>
+    <script src="js/check_send_inputs.js"></script>
+</body>
+
+</html>
