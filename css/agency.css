@@ -193,7 +193,7 @@ img::-moz-selection {
 header.masthead {
   text-align           : center;
   color                : white;
-  background-image     : url("../img/header-bg.jpg");
+  background-image     : url("../img/banner.png");
   background-repeat    : no-repeat;
   background-attachment: scroll;
   background-position  : center center;
@@ -718,11 +718,6 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   margin-bottom: 23%;
 }
 
-/* #contact_title
-{
-  font-size    : 250%;
-  margin-bottom: 5%;
-} */
 
 .footer
 {
@@ -839,6 +834,8 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 #contact_section
 {
   color:  white;
+  padding-top: 3%;
+  padding-bottom: 2%;
 }
 
 
@@ -1001,8 +998,7 @@ ul.navbar-nav.ml-auto
 
 #espa_img
 {
-  width:  30%;
+  width:  40%;  
 }
-
 
 /*---------------------------------------*/

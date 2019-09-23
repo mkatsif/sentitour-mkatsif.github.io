@@ -51,14 +51,13 @@ function sendMessage()
 	if(name.length!=0 && email.length!=0
 		&& subject.length!=0 && message.length!=0)
 	{
-		// alert("yes");
+		alert("yes");
 		var nameErr = true;
 		
 	}
 	else
 	{
-		// alert("empty");
-		// printError("name_cform", "Please enter your name");
+		alert("empty");
 	}
 
 
@@ -76,12 +75,11 @@ function checkInputsIfEmpty(id)
     	var input = allInputs[i];
         if (input.value.length == 0) 
         {
-        	// alert("kk");
           	return true;
         }
       	else
       	{
-        return false;
+   			return false;
   		}	
 	}  
 }
