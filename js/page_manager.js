@@ -2,12 +2,18 @@
 
 var mainBody = document.getElementById("mainBody");
 
+/**
+ * 
+ */
 function showHomePage()
 {
 	location.reload();
 	window.scrollTo(0,0);
 }
 
+/**
+ * Closes the login pop-up modal.
+ */
 function close_login_modal()
 {
 	document.getElementById("login_modal").setAttribute("aria-expanded", "false");	
@@ -15,6 +21,9 @@ function close_login_modal()
 	document.getElementById("login_modal_state2").setAttribute("class", "dropdown-menu px-3");
 }
 
+/**
+ * Closes the menu.
+ */
 function closeMenu()
 {
 	document.getElementById("menu_button").setAttribute("class","navbar-toggler navbar-toggler-right collapsed");
@@ -22,6 +31,9 @@ function closeMenu()
 	document.getElementById("menu_button_inner_div").setAttribute("class","navbar-collapse collapse");
 }
 
+/**
+ * Changes the description section images on resize of the window.
+ */
 function changeDescriptionImages()
 {
 	var mq = window.matchMedia( "(max-width: 991px)" );
@@ -79,7 +91,9 @@ function changeDescriptionImages()
 }
 
 
-
+/**
+ * Injects the code to show the password reset page.
+ */
 function injectPasswordReset()
 {
 		close_login_modal();
@@ -162,7 +176,9 @@ function injectPasswordReset()
 }
 
 
-
+/**
+ * Injects the code to show the create user page.
+ */
 function injectCreateUser()
 {
 		close_login_modal();
@@ -555,7 +571,9 @@ function injectCreateUser()
 }
 
 
-
+/**
+ * Jumps to a section according to the user's selection.
+ */
 function showAndJumpToSection(sectionID)
 {
 	
@@ -568,6 +586,9 @@ function showAndJumpToSection(sectionID)
 	document.querySelector(sectionID).scrollIntoView({behavior: 'smooth'});	/*not jumping to the section*/
 }
 
+/**
+ * Changes the language according to the user's selection.
+ */
 function changeLanguage(language)
 {
 	var createUser = false;

@@ -1,6 +1,8 @@
 "use strict";
 
-
+/**
+ * Checks if the user gave valid inputs to login.
+ */
 function LogIn()
 {
 	var username = document.getElementById('username_login');
@@ -14,6 +16,9 @@ function LogIn()
 	}
 }
 
+/**
+ * Checks if the user gave a valid email to reset the password.
+ */
 function passReset()
 {
 	if(!checkInputsIfEmpty('password_reset_div'))
@@ -23,7 +28,9 @@ function passReset()
 }
 
 
-
+/**
+ * Checks if the user gave valid inputs.
+ */
 function createAccount()
 {
 	var email = document.getElementById('email_createAccount');
@@ -40,32 +47,9 @@ function createAccount()
 }
 
 
-function sendMessage()
-{
-	var name = document.getElementById('name_cform').value;
-	var email = document.getElementById('email_cform').value;
-	var subject = document.getElementById('subject_cform').value;
-	var message = document.getElementById('message_cform').value;
-
-
-	if(name.length!=0 && email.length!=0
-		&& subject.length!=0 && message.length!=0)
-	{
-		alert("yes");
-		var nameErr = true;
-		
-	}
-	else
-	{
-		alert("empty");
-	}
-
-
-
-}
-
-
-
+/**
+ * Checks if the inputs are empty and returns true if empty, else false.
+ */
 function checkInputsIfEmpty(id) 
 { 
 	var allInputs = document.getElementById(id).getElementsByTagName('input');
