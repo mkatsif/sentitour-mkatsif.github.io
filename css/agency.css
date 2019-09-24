@@ -506,7 +506,7 @@ header.masthead .intro-text .intro-heading {
 }
 
 .timeline .timeline-heading h4 {
-  margin-top: 0;
+  margin-top: 5%;
   color: inherit;
 }
 
@@ -525,12 +525,11 @@ header.masthead .intro-text .intro-heading {
     left: 50%;
   }
   .timeline > li {
-    min-height   : 100px;
-    margin-bottom: 100px;
+    margin-bottom: 5%;
   }
   .timeline > li .timeline-panel {
     float     : left;
-    width     : 41%;
+    width     : 44%;
     padding   : 0 20px 20px 30px;
     text-align: right;
   }
@@ -553,17 +552,18 @@ header.masthead .intro-text .intro-heading {
 }
 
 @media (min-width: 992px) 
-{
+{  
   .timeline > li {
     min-height: 150px;
+    margin-bottom: 0%;
   }
   .timeline > li .timeline-panel {
     padding: 0 20px 20px;
   }
   .timeline > li .timeline-image {
-    width      : 150px;
-    height     : 150px;
-    margin-left: -75px;
+    width      : 120px;
+    height     : 120px;
+    margin-left: -60px;
   }
   .timeline > li .timeline-image h4 {
     font-size  : 18px;
@@ -584,15 +584,15 @@ header.masthead .intro-text .intro-heading {
     padding: 0 20px 20px 100px;
   }
   .timeline > li .timeline-image {
-    width      : 170px;
-    height     : 170px;
-    margin-left: -85px;
+    width      : 120px;
+    height     : 120px;
+    margin-left: -60px;
   }
   .timeline > li .timeline-image h4 {
     margin-top: 40px;
   }
   .timeline > li.timeline-inverted > .timeline-panel {
-    padding: 0 100px 20px 20px;
+    padding: 0 10px 20px 20px;
   }
 }
 
@@ -794,6 +794,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   float: right;
   width: 50%;
 }
+
 #goal_img_bot
 {
   width: 40%;
@@ -972,6 +973,11 @@ ul.navbar-nav.ml-auto
 #espa_img
 {
   width:  40%;  
+}
+
+.menu_items
+{
+  font-size: 110%;
 }
 
 /*---------------------------------------*/
